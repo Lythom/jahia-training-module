@@ -1,2 +1,23 @@
-<jnt = 'http://www.jahia.org/jahia/nt/1.0'>
+<clever = 'http://clever-age.com/'>
+<clevermix = 'http://www.clever-age.com/mix/'>
 <jmix = 'http://www.jahia.org/jahia/mix/1.0'>
+<jnt = 'http://www.jahia.org/jahia/nt/1.0'>
+<mix = 'http://www.jcp.org/jcr/mix/1.0'>
+
+[clever:employee] > jnt:content, mix:title, clevermix:acmeComponents
+ - FullName (string)
+ - UsualName (string)
+ - Biography (string, richtext) internationalized
+ - jcr:title (string)
+ - Image (weakreference, picker[type='image']) noqueryorder nofulltext
+ - JobTitle (string, choicelist[resourceBundle]) = 'developer' < 'director', 'scrumMaster', 'developer', 'integrator', 'graphist', 'database_administrator'
+ - Nationality (string, choicelist[country])
+ - Birthdate (date, datepicker)
+ - Supervisor (weakreference) < 'clever:employee'
+
+[clevermix:acmeComponents] > jmix:droppableContent mixin
+
+[clever:CompanyDivision] > jnt:content, clevermix:acmeComponents, mix:title
+ - jcr:title (string)
+ + * (clever:employee)
+

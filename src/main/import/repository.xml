@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<content xmlns:j="http://www.jahia.org/jahia/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0">
+    <modules jcr:primaryType="jnt:modules">
+        <acmeCompany j:dependencies="default"
+                   j:modulePriority="0"
+                   j:moduleType="module"
+                   j:title="acmeCompany"
+                   jcr:mixinTypes="jmix:hasExternalProviderExtension"
+                   jcr:primaryType="jnt:module">
+                <sources jcr:mixinTypes="jmix:hasExternalProviderExtension jmix:sourceControl"
+                  jcr:primaryType="jnt:moduleVersionFolder"
+                  j:staticMountPointProviderKey="module-acmeCompany-1.0-SNAPSHOT">
+                    <src jcr:mixinTypes="jmix:sourceControl" jcr:primaryType="jnt:folder">
+                        <main jcr:mixinTypes="jmix:sourceControl" jcr:primaryType="jnt:folder">
+                            <resources jcr:mixinTypes="jmix:sourceControl" jcr:primaryType="jnt:folder">
+                                <clever_CompanyDivision jcr:mixinTypes="jmix:sourceControl"
+                                             jcr:primaryType="jnt:nodeTypeFolder">
+                                    <html jcr:mixinTypes="jmix:sourceControl"
+                              jcr:primaryType="jnt:templateTypeFolder">
+                                        <CompanyDivision.jsp jcr:mixinTypes="jmix:sourceControl" jcr:primaryType="jnt:viewFile"/>
+                                    </html>
+                                </clever_CompanyDivision>
+                                <clever_employee jcr:mixinTypes="jmix:sourceControl"
+                                      jcr:primaryType="jnt:nodeTypeFolder">
+                                    <html jcr:mixinTypes="jmix:sourceControl"
+                              jcr:primaryType="jnt:templateTypeFolder">
+                                        <employee.detail.jsp jcr:mixinTypes="jmix:sourceControl" jcr:primaryType="jnt:viewFile"/>
+                                        <employee.jsp jcr:mixinTypes="jmix:sourceControl" jcr:primaryType="jnt:viewFile"/>
+                                        <employee.li.jsp jcr:mixinTypes="jmix:sourceControl" jcr:primaryType="jnt:viewFile"/>
+                                    </html>
+                                </clever_employee>
+                            </resources>
+                        </main>
+                    </src>
+                </sources>
+                
+                <portlets jcr:primaryType="jnt:portletFolder"/>
+                <files jcr:primaryType="jnt:folder"/>
+                <contents jcr:primaryType="jnt:contentFolder"/>
+                <templates j:rootTemplatePath="/base" jcr:primaryType="jnt:templatesFolder">
+                    <files jcr:primaryType="jnt:folder"/>
+                    <contents jcr:primaryType="jnt:contentFolder"/>
+                    <employee j:applyOn="clever:employee"
+                      j:defaultTemplate="true"
+                      j:hiddenTemplate="false"
+                      jcr:primaryType="jnt:contentTemplate">
+                        <j:translation_fr jcr:language="fr"
+                                 jcr:primaryType="jnt:translation"
+                                 jcr:title="Employee"/>
+                        <pagecontent jcr:primaryType="jnt:contentList">
+                            <back jcr:primaryType="jnt:backToParentPage">
+                                <j:translation_fr jcr:language="fr"
+                                       jcr:primaryType="jnt:translation"
+                                       jcr:title="Back"/>
+                            </back>
+                            <main-resource-display j:mainResourceView="detail" jcr:primaryType="jnt:mainResourceDisplay"/>
+                        </pagecontent>
+                    </employee>
+                    <employee-li j:applyOn="clever:employee"
+                         j:defaultTemplate="false"
+                         j:hiddenTemplate="false"
+                         jcr:primaryType="jnt:contentTemplate">
+                        <j:translation_fr jcr:language="fr"
+                                 jcr:primaryType="jnt:translation"
+                                 jcr:title="Employee-li"/>
+                        <pagecontent jcr:primaryType="jnt:contentList">
+                            <main-resource-display j:mainResourceView="li" jcr:primaryType="jnt:mainResourceDisplay"/>
+                        </pagecontent>
+                    </employee-li>
+                </templates>
+                
+            </acmeCompany>
+    </modules>
+</content>
